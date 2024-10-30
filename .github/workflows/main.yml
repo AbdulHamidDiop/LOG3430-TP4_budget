@@ -20,3 +20,10 @@ jobs:
 
       - name: Run tests
         run: python manage.py test
+
+      - name: Run bisect script
+        if: failure()
+        env:
+          goodhash: e4cfc6f77ebbe2e23550ddab682316ab4ce1c03c # known good commit
+          badhash: ${{ github.sha }}
+        run: python bisect_script.py
