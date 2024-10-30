@@ -26,4 +26,4 @@ jobs:
         env:
           goodhash: e4cfc6f77ebbe2e23550ddab682316ab4ce1c03c # known good commit
           badhash: ${{ github.sha }}
-        run: python .github/workflows/bisect_script.py
+        run: python .github/workflows/myscript.py
